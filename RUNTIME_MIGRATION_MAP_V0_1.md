@@ -12,6 +12,7 @@ changes.
 | Receipt chain | Reusable in-memory provenance contract | Included | Keep non-persistent and non-effectful |
 | UltraCode proposal boundary | Reusable safety contract | Included | Keep provider identity/configuration private and injectable |
 | Process-isolated MLX runner | Reusable candidate repair | Included | Integrate only through a separately reviewed runtime change |
+| Private UltraCode build backend | Authorization-bound runtime machinery | Excluded | Keep Docker, model, signer, and provider configuration private |
 | Staged chat surface | Private operational artifact | Excluded | Maintain in the private runtime until it has a sanitized package boundary |
 | Drive adapters and scopes | Private connector integration | Excluded | Keep identifiers, scopes, receipts, and connector configuration private |
 | Cognition activation packets | Private governance material | Excluded | Keep Founder decisions and activation receipts private |

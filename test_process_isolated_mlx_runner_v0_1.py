@@ -1,6 +1,8 @@
 import json
 import sys
 
+import pytest
+
 from process_isolated_mlx_runner_v0_1 import receipt_payload, run_json
 
 
@@ -38,3 +40,15 @@ def test_offline_request_is_serialized_and_hash_bound():
     result = run_json(child("import sys, json; print(json.dumps(json.loads(sys.stdin.read())))"), {"a": 2})
     assert result.status == "COMPLETED"
     assert len(result.command_sha256) == 64
+
+
+def test_receipt_payload_preserves_abstention_boundary():
+    result = run_json(child("print('not-json')"), {}, timeout_s=2)
+    receipt = receipt_payload(result)
+    assert receipt["status"] == "ABSTAINED"
+    assert len(receipt["receipt_sha256"]) == 64
+
+
+def test_timeout_range_is_bounded():
+    with pytest.raises(ValueError, match="timeout_s"):
+        run_json(child("print('{}')"), {}, timeout_s=0)
