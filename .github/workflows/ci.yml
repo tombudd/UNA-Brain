@@ -1,0 +1,40 @@
+name: Brain CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-scan:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install test runner
+        run: python -m pip install --upgrade pytest
+
+      - name: Run tests
+        run: python -m pytest -q
+
+      - name: Scan published files for private material
+        shell: bash
+        run: |
+          set -euo pipefail
+          if rg -n '/Users/|/private/|drive\.google\.com|BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY|aws_access_key_id|api[_ -]?key[[:space:]]*[:=]|password[[:space:]]*[:=]' \
+            --glob '!.git/**' --glob '!*.pyc' .; then
+            echo 'Private-material scan failed.' >&2
+            exit 1
+          fi
