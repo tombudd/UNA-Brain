@@ -8,7 +8,8 @@ changes.
 | --- | --- | --- | --- |
 | Bounded learning substrate | Reusable candidate implementation and offline batch scheduler | Included | Add API and provenance tests as the contract evolves |
 | Recursive self-improvement | Reusable shadow candidate | Included | Keep shadow-only until independent review and an explicit gate exist |
-| Shadow comparison | Reusable model-free harness | Included | Add fixture manifests and replay documentation |
+| Shadow comparison | Generic model-free harness | Included | Keep separate from the private domain-specific Shadow Day planner |
+| Receipt chain | Reusable in-memory provenance contract | Included | Keep non-persistent and non-effectful |
 | UltraCode proposal boundary | Reusable safety contract | Included | Keep provider identity/configuration private and injectable |
 | Process-isolated MLX runner | Reusable candidate repair | Included | Integrate only through a separately reviewed runtime change |
 | Staged chat surface | Private operational artifact | Excluded | Maintain in the private runtime until it has a sanitized package boundary |
