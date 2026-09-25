@@ -6,7 +6,7 @@ changes.
 
 | Area | Current classification | GitHub treatment | Next disposition |
 | --- | --- | --- | --- |
-| Bounded learning substrate | Reusable candidate implementation | Included | Add API and provenance tests as the contract evolves |
+| Bounded learning substrate | Reusable candidate implementation and offline batch scheduler | Included | Add API and provenance tests as the contract evolves |
 | Recursive self-improvement | Reusable shadow candidate | Included | Keep shadow-only until independent review and an explicit gate exist |
 | Shadow comparison | Reusable model-free harness | Included | Add fixture manifests and replay documentation |
 | UltraCode proposal boundary | Reusable safety contract | Included | Keep provider identity/configuration private and injectable |
