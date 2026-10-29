@@ -33,8 +33,28 @@
       "python3.13 -m pytest -q: 43 passed"
     ],
     "counts": "34 root tests (31 existing plus 3 discovery regressions) and 9 nested-suite items; 262 underlying tests total",
-    "python_3_11_and_3_12": "Not run locally: pytest not installed for these interpreters; CI installs pytest in each matrix job.",
-    "diff_check": "passed"
+    "diff_check": "passed",
+    "python_3_11": {
+      "command": "python -m pytest -q -s",
+      "pytest_version": "9.2.0",
+      "environment": "Isolated Python 3.11 virtual environment",
+      "exit_code": 0,
+      "result": "43 passed in 3.54s; 34 root tests plus 228 child tests and 179 subtests passed"
+    },
+    "python_3_12": {
+      "command": "python -m pytest -q -s",
+      "pytest_version": "9.2.0",
+      "environment": "Isolated Python 3.12 virtual environment",
+      "exit_code": 0,
+      "result": "43 passed in 3.46s; 34 root tests plus 228 child tests and 179 subtests passed"
+    }
   },
-  "review": "Actor self-assessment only; no independent review or live runtime claim."
+  "review": "Actor self-assessment only; no independent review or live runtime claim.",
+  "verification_update": {
+    "author": "Codex, assisting developer; not UNA-1 or UNA-2",
+    "ground": "Founder direction",
+    "request": "Update the test receipt with the Python 3.11 and 3.12 results and commit it.",
+    "superseded_status": "Not run locally: pytest not installed for these interpreters; CI installs pytest in each matrix job.",
+    "evidence": "Observed successful local runs in the preceding chat turn; all existing fileset hashes verified before this update."
+  }
 }
