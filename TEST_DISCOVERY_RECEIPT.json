@@ -47,6 +47,56 @@
       "environment": "Isolated Python 3.12 virtual environment",
       "exit_code": 0,
       "result": "43 passed in 3.46s; 34 root tests plus 228 child tests and 179 subtests passed"
+    },
+    "ci": {
+      "repository": "tombudd/UNA-Brain",
+      "workflow": "Brain CI",
+      "run_id": 40919024084,
+      "url": "https://github.com/tombudd/UNA-Brain/actions/runs/40919024084",
+      "head_sha": "32fc0376b8c0cd7c132fd611c3c617ff3b0b72cb",
+      "conclusion": "success",
+      "command": "python -m pytest -q -s",
+      "scope": "34 published tests per matrix job; unpublished local candidate suites are excluded from this checkout. Local 262-test results above remain separate.",
+      "matrix": {
+        "3.11": {
+          "job_id": 123606903787,
+          "url": "https://github.com/tombudd/UNA-Brain/actions/runs/40919024084/job/123606903787",
+          "conclusion": "success",
+          "tests": "34 passed in 1.78s",
+          "private_material_scan": "success",
+          "completed_at": "2026-10-29T17:12:23Z"
+        },
+        "3.12": {
+          "job_id": 123606904512,
+          "url": "https://github.com/tombudd/UNA-Brain/actions/runs/40919024084/job/123606904512",
+          "conclusion": "success",
+          "tests": "34 passed in 2.05s",
+          "private_material_scan": "success",
+          "completed_at": "2026-10-29T17:12:22Z"
+        },
+        "3.13": {
+          "job_id": 123606904387,
+          "url": "https://github.com/tombudd/UNA-Brain/actions/runs/40919024084/job/123606904387",
+          "conclusion": "success",
+          "tests": "34 passed in 2.13s",
+          "private_material_scan": "success",
+          "completed_at": "2026-10-29T17:12:20Z"
+        },
+        "3.14": {
+          "job_id": 123606904435,
+          "url": "https://github.com/tombudd/UNA-Brain/actions/runs/40919024084/job/123606904435",
+          "conclusion": "success",
+          "tests": "34 passed in 2.57s",
+          "private_material_scan": "success",
+          "completed_at": "2026-10-29T17:12:22Z"
+        }
+      },
+      "published_files": {
+        "conftest.py": "0e0a546fbfbab959dc7606609ca3db5cffcbb5f782f10579cfa9dab9ec41739f",
+        "test_suite_discovery.py": "025b078aa7efb8ca0d6af61d876d59dd899c7b1fc5b3b9fbbcaa9ce4419c3f4c",
+        "README.md": "837d5b3c95c57504d396f42f92a324656bdf7e511ddc1a592acc8a33cab50fe3",
+        ".github/workflows/ci.yml": "1e96b139bc3dbb248d2b233ea5101e28d24c7fd35d6b8420aed15e38ee25d1ed"
+      }
     }
   },
   "review": "Actor self-assessment only; no independent review or live runtime claim.",
@@ -56,5 +106,12 @@
     "request": "Update the test receipt with the Python 3.11 and 3.12 results and commit it.",
     "superseded_status": "Not run locally: pytest not installed for these interpreters; CI installs pytest in each matrix job.",
     "evidence": "Observed successful local runs in the preceding chat turn; all existing fileset hashes verified before this update."
+  },
+  "ci_receipt_update": {
+    "author": "Codex, assisting developer; not UNA-1 or UNA-2",
+    "ground": "Founder direction",
+    "request": "Update the test receipt with the successful Python 3.11\u20133.14 CI results, then commit and push it.",
+    "evidence": "GitHub Actions run metadata, successful test and private-material scan steps, and 34-passed output from every matrix job.",
+    "scope": "Records run 40919024084 against its exact head; does not claim this subsequent receipt commit was tested by that run."
   }
 }
