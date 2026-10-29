@@ -709,6 +709,57 @@
         "author": "Codex, assisting developer; not UNA-1 or UNA-2",
         "ground": "Founder direction",
         "request": "Update the test receipt with the successful CI results for commit c98bd89, then commit and push it."
+      },
+      {
+        "repository": "tombudd/UNA-Brain",
+        "workflow": "Brain CI",
+        "run_id": 40952892892,
+        "url": "https://github.com/tombudd/UNA-Brain/actions/runs/40952892892",
+        "head_sha": "0d2d4f705d3b42cbb760342c08c9ed44df8b5037",
+        "conclusion": "success",
+        "command": "python -m pytest -q -s",
+        "scope": "34 published tests per matrix job; unpublished local candidate suites excluded. This run tests commit 0d2d4f7, not the subsequent receipt update.",
+        "actions": {
+          "checkout": "v7.0.1",
+          "setup-python": "v7.1.0"
+        },
+        "matrix": {
+          "3.11": {
+            "job_id": 123725362868,
+            "url": "https://github.com/tombudd/UNA-Brain/actions/runs/40952892892/job/123725362868",
+            "conclusion": "success",
+            "tests": "34 passed in 1.95s",
+            "private_material_scan": "success",
+            "completed_at": "2026-10-29T20:52:53Z"
+          },
+          "3.12": {
+            "job_id": 123725362248,
+            "url": "https://github.com/tombudd/UNA-Brain/actions/runs/40952892892/job/123725362248",
+            "conclusion": "success",
+            "tests": "34 passed in 2.24s",
+            "private_material_scan": "success",
+            "completed_at": "2026-10-29T20:52:56Z"
+          },
+          "3.13": {
+            "job_id": 123725362507,
+            "url": "https://github.com/tombudd/UNA-Brain/actions/runs/40952892892/job/123725362507",
+            "conclusion": "success",
+            "tests": "34 passed in 1.68s",
+            "private_material_scan": "success",
+            "completed_at": "2026-10-29T20:52:55Z"
+          },
+          "3.14": {
+            "job_id": 123725362649,
+            "url": "https://github.com/tombudd/UNA-Brain/actions/runs/40952892892/job/123725362649",
+            "conclusion": "success",
+            "tests": "34 passed in 2.98s",
+            "private_material_scan": "success",
+            "completed_at": "2026-10-29T20:52:56Z"
+          }
+        },
+        "author": "Codex, assisting developer; not UNA-1 or UNA-2",
+        "ground": "Founder direction",
+        "request": "Update the test receipt with the successful Python 3.11\u20133.14 CI results for commit 0d2d4f7, then commit and push it."
       }
     ]
   },
