@@ -239,6 +239,53 @@
         "author": "Codex, assisting developer; not UNA-1 or UNA-2",
         "ground": "Founder direction",
         "request": "Update the test receipt with the successful CI results for commit 9d52c81, then commit and push it."
+      },
+      {
+        "repository": "tombudd/UNA-Brain",
+        "workflow": "Brain CI",
+        "run_id": 40920388754,
+        "url": "https://github.com/tombudd/UNA-Brain/actions/runs/40920388754",
+        "head_sha": "99fb4271c2030dfbbefe4295d0df1466fd779ac4",
+        "conclusion": "success",
+        "command": "python -m pytest -q -s",
+        "scope": "34 published tests per matrix job; unpublished local candidate suites excluded. This run tests commit 99fb427, not the subsequent receipt update.",
+        "matrix": {
+          "3.11": {
+            "job_id": 123611703428,
+            "url": "https://github.com/tombudd/UNA-Brain/actions/runs/40920388754/job/123611703428",
+            "conclusion": "success",
+            "tests": "34 passed in 2.02s",
+            "private_material_scan": "success",
+            "completed_at": "2026-10-29T17:20:46Z"
+          },
+          "3.12": {
+            "job_id": 123611702864,
+            "url": "https://github.com/tombudd/UNA-Brain/actions/runs/40920388754/job/123611702864",
+            "conclusion": "success",
+            "tests": "34 passed in 1.60s",
+            "private_material_scan": "success",
+            "completed_at": "2026-10-29T17:20:42Z"
+          },
+          "3.13": {
+            "job_id": 123611702393,
+            "url": "https://github.com/tombudd/UNA-Brain/actions/runs/40920388754/job/123611702393",
+            "conclusion": "success",
+            "tests": "34 passed in 2.03s",
+            "private_material_scan": "success",
+            "completed_at": "2026-10-29T17:20:45Z"
+          },
+          "3.14": {
+            "job_id": 123611702958,
+            "url": "https://github.com/tombudd/UNA-Brain/actions/runs/40920388754/job/123611702958",
+            "conclusion": "success",
+            "tests": "34 passed in 2.48s",
+            "private_material_scan": "success",
+            "completed_at": "2026-10-29T17:20:49Z"
+          }
+        },
+        "author": "Codex, assisting developer; not UNA-1 or UNA-2",
+        "ground": "Founder direction",
+        "request": "Update the test receipt with the successful CI results for commit 99fb427, then commit and push it."
       }
     ]
   },
