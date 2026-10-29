@@ -1,0 +1,40 @@
+{
+  "author": "Codex, assisting developer; not UNA-1 or UNA-2",
+  "assistance_ground": "Founder direction",
+  "requester": "Tom Budd",
+  "request": "Fix the test discovery collisions and update the README and CI so the standard test command runs all suites successfully.",
+  "root_cause": "Duplicate test and candidate module names in frozen revision directories shared one interpreter during recursive pytest collection.",
+  "files": {
+    "conftest.py": "0e0a546fbfbab959dc7606609ca3db5cffcbb5f782f10579cfa9dab9ec41739f",
+    "test_suite_discovery.py": "025b078aa7efb8ca0d6af61d876d59dd899c7b1fc5b3b9fbbcaa9ce4419c3f4c",
+    "README.md": "c42bee1f4d778eadc2d7ba786fbdbe6916a4630fc2d5211c1ac2d062c5bc61ba",
+    ".github/workflows/ci.yml": "1e96b139bc3dbb248d2b233ea5101e28d24c7fd35d6b8420aed15e38ee25d1ed"
+  },
+  "preservation": {
+    "preexisting_tracked_diff_sha256": "995a99e9658bb9cda0ec22e35656775c89540594e4ede5a2527fb86d115e8cd5",
+    "preexisting_status_sha256": "9e4c1253be68ffd74d8fe90588700278ff3c797ae8012a1d292334064e17249d",
+    "unrelated_modified_file": "BRAIN_REMAINING_BLOCKER_STATUS_V0_2.md",
+    "candidate_sources_changed": false
+  },
+  "verification": {
+    "alignment": "PASS_ALIGNED",
+    "self_assessment": "PASS_SELF_ASSESSED",
+    "rubric": [
+      "Default command collects root tests and every nested suite present in checkout without filename collisions.",
+      "Revision-local imports remain isolated.",
+      "Child assertion and collection errors fail the outer run.",
+      "Frozen candidate sources and unrelated edits remain intact."
+    ],
+    "python_3_14": [
+      "python3 -m pytest -q: 43 passed",
+      "python3 -m pytest -q -s: 43 passed; child output confirms 228 nested tests and 179 subtests passed"
+    ],
+    "python_3_13": [
+      "python3.13 -m pytest -q: 43 passed"
+    ],
+    "counts": "34 root tests (31 existing plus 3 discovery regressions) and 9 nested-suite items; 262 underlying tests total",
+    "python_3_11_and_3_12": "Not run locally: pytest not installed for these interpreters; CI installs pytest in each matrix job.",
+    "diff_check": "passed"
+  },
+  "review": "Actor self-assessment only; no independent review or live runtime claim."
+}
